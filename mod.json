@@ -1,0 +1,47 @@
+{
+    "geode": "5.11.2",
+    "gd": {
+        "win": "2.2081",
+        "android": "2.2081",
+        "mac": "2.2081"
+    },
+    "id": "hypertrainer.window-counter",
+    "name": "Window Counter",
+    "version": "v0.2.0",
+    "developer": "hypertrainer",
+    "description": "Counts frame windows of a macro by replaying it in-game and exports nandl.json for the HyperClick trainer. Android build.",
+    "settings": {
+        "max-shift": {
+            "type": "int",
+            "name": "Max window (ticks per side)",
+            "description": "How far (in ticks, 240 TPS) each input is shifted left and right while looking for its window. Windows wider than this are capped.",
+            "default": 12,
+            "min": 2,
+            "max": 60
+        },
+        "horizon": {
+            "type": "int",
+            "name": "Survive after input (ticks)",
+            "description": "A shifted input counts as passing if the player stays alive this many ticks after it.",
+            "default": 90,
+            "min": 20,
+            "max": 480
+        },
+        "tick-offset": {
+            "type": "int",
+            "name": "Input tick offset (calibration)",
+            "description": "Shifts when macro inputs are injected relative to the game tick counter. If the self-test says the macro desyncs, try -1 or 1.",
+            "default": 0,
+            "min": -3,
+            "max": 3
+        },
+        "budget-ms": {
+            "type": "int",
+            "name": "Work per frame (ms)",
+            "description": "How long the counter simulates each rendered frame. Higher = faster counting but a choppier screen.",
+            "default": 12,
+            "min": 2,
+            "max": 60
+        }
+    }
+}
